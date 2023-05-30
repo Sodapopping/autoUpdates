@@ -5,7 +5,7 @@ let isStreamOnline = false;
 let streamGame = "Intro";
 
 checkStreamStatus();
-setInterval(checkStreamStatus, 15000);
+setInterval(checkStreamStatus, 15000); // If you want it to go hyperspeed, change it to 75 here. You do NOT need to create a hyper-parasocial updater bot.
 
 async function checkStreamStatus() {
 	try {
