@@ -24,15 +24,18 @@ async function checkStreamStatus() {
 				if(streamGame == "Intro" && stream.game_name == "Just Chatting") return; 
 				console.log(`\nGame changed from ${streamGame} to ${stream.game_name}\n`);
 				streamGame = stream.game_name;
+				return;
 			}
 
 			if (!isStreamOnline) {
 				console.log(`\nxQc is live on Twitch!\n\nTitle: ${stream.title}\nGame: ${stream.game_name}\nStream Link: https://twitch.tv/xQc`);
 				isStreamOnline = true;
+				return;
 			}
 		} else {
 			isStreamOnline = false;
 			console.log('\nStreamer now offline.\n')
+			return;
 		}
-	} catch (error) { null }
+	} catch (error) { return null; }
 } // Well, that was easy.
